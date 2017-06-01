@@ -1,28 +1,28 @@
-# Angularcli
+# Module Loading v Module Bundling
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+This project was used as a demo to represent an application that is a bit larger and at one side supports module bundling and at another side supports module loading.
+I've used this project on a talk at jsbe.io about this topic.
 
-## Development server
+## Setup
+Make sure to run `npm install` before trying out anything at all.
+You should create a new [Firebase](https://console.firebase.google.com/?pli=1) application, because this project needs some Firebase database to work correctly. Also you should activate authentication towards that database with [email/password](https://firebase.google.com/docs/auth/web/password-auth) (see #3 in before you begin).
+From the root directory go to the src folder and create a secrets folder underneath it. In this folder, you should add a secrets.ts file which should look as follows:
+```
+export const firebaseConfig = {
+    apiKey: '[secret]',
+    authDomain: '[secret].firebaseapp.com',
+    databaseURL: 'https://[secret].firebaseio.com',
+    projectId: '[secret]',
+    storageBucket: '[secret]',
+    messagingSenderId: '[secret]'
+  };
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The documentation to fill up the secrets can be found [here](https://firebase.google.com/docs/web/setup)
 
-## Code scaffolding
+## Module Loading
+Run `npm run module-loading` from the command line. It will create an application in the dist folder, by using `gulp`. And then uses `lite-server` to run the application from there.
+I needed to make a couple of hacks to angularfire2 and firebase to make it work correctly with systemjs. Maybe I'll create a pull request for angularfire2 to support bundles correctly for systemjs, but for now I didn't. (ping me for more info about it!)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Module Bundling
+You can just use `npm start` which will run the `ng serve` command (from angular-cli). 

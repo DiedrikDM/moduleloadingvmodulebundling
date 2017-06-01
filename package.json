@@ -1,5 +1,5 @@
 {
-  "name": "angularcli",
+  "name": "moduleloadingvmodulebundling",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,20 +8,40 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "module-loading": "gulp && lite-server"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^4.1.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
+    "@angular/material": "^2.0.0-beta.3",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angularfire2": "^4.0.0-rc.0",
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "core-js": "^2.4.1",
+    "firebase": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-typescript": "^3.1.7",
+    "hammerjs": "^2.0.8",
+    "lite-server": "^2.3.0",
+    "promise-polyfill": "6.0.2",
+    "rimraf": "^2.6.1",
     "rxjs": "^5.1.0",
+    "systemjs": "^0.20.13",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

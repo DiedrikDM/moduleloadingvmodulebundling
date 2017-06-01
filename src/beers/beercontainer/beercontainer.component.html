@@ -1,0 +1,7 @@
+<md-card>
+  <md-toolbar color="primary">My Beers</md-toolbar>
+  <md-card-content>
+    <app-searchbeer (onBeerAdded)="addBeer($event)"></app-searchbeer>
+    <app-my-beers [beers]="beers$ | async"></app-my-beers>
+  </md-card-content>
+</md-card>

@@ -1,0 +1,18 @@
+<md-card class="demo-card demo-basic">
+  <md-toolbar color="primary">Login</md-toolbar>
+  <md-card-content>
+    <form>
+      <div class="center">
+        <md-input-container class="demo-full-width">
+          <input mdInput #username placeholder="Username">
+        </md-input-container>
+        <md-input-container class="demo-full-width">
+          <input mdInput #password placeholder="Password" type="password">
+        </md-input-container>
+        <button color="primary" md-raised-button (click)="login(username.value,password.value)">Log In</button>
+        <button color="primary" md-raised-button (click)="register(username.value,password.value)">Register</button>
+        <p *ngIf="message">{{message}}</p>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>
